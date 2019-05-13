@@ -1,0 +1,1065 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Tugas Data Mining Kelas B">
+      
+      
+      
+        <meta name="author" content="Marko Prastiono">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.2.0">
+    
+    
+      
+        <title>Marko Prastiono</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/application.750b69bd.css">
+      
+        <link rel="stylesheet" href="assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="assets/fonts/material-icons.css">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "None", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#k-nearest-neighbor" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="." title="Marko Prastiono" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Marko Prastiono
+            </span>
+            <span class="md-header-nav__topic">
+              Material
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/MarkoDism/dm_b" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    dm_b
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+<nav class="md-tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="." title="Material" class="md-tabs__link md-tabs__link--active">
+        Material
+      </a>
+    
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="." title="Marko Prastiono" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Marko Prastiono
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/MarkoDism/dm_b" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    dm_b
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Material
+      </label>
+    
+    <a href="." title="Material" class="md-nav__link md-nav__link--active">
+      Material
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#langkah-langkah-menjalankan-k-neighbor-di-r" title="Langkah-langkah Menjalankan K-Neighbor di R" class="md-nav__link">
+    Langkah-langkah Menjalankan K-Neighbor di R
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#k-neighbor" title="K-Neighbor" class="md-nav__link">
+    K-Neighbor
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kelebihan-dan-kekuarangan" title="Kelebihan dan Kekuarangan" class="md-nav__link">
+    Kelebihan dan Kekuarangan
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bagaimana-k-neighbor-bekerja" title="Bagaimana K-Neighbor Bekerja?" class="md-nav__link">
+    Bagaimana K-Neighbor Bekerja?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#langkah-1-hitung-kesamaan-berdasarkan-fungsi-jarak" title="#Langkah 1 : Hitung Kesamaan berdasarkan fungsi jarak." class="md-nav__link">
+    #Langkah 1 : Hitung Kesamaan berdasarkan fungsi jarak.
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pelanggan-baru-bernama-monica-memiliki-tinggi-161cm-dan-berat-61kg" title="Pelanggan baru bernama 'Monica' memiliki tinggi 161cm dan berat 61kg." class="md-nav__link">
+    Pelanggan baru bernama 'Monica' memiliki tinggi 161cm dan berat 61kg.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#langkah-2-menemukan-tetangga-terdekat" title="#Langkah 2: Menemukan tetangga terdekat" class="md-nav__link">
+    #Langkah 2: Menemukan tetangga terdekat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asumsi-k-neighbor" title="Asumsi K-Neighbor" class="md-nav__link">
+    Asumsi K-Neighbor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-standardisasi" title="1. Standardisasi" class="md-nav__link">
+    1. Standardisasi
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2outlier" title="2.Outlier" class="md-nav__link">
+    2.Outlier
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mengapa-knn-bersifat-non-parametrik" title="Mengapa KNN bersifat non-parametrik?" class="md-nav__link">
+    Mengapa KNN bersifat non-parametrik?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#knn-vs-k-mean" title="KNN vs K-Mean" class="md-nav__link">
+    KNN vs K-Mean
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pro-dan-kontra-knn" title="Pro dan Kontra KNN" class="md-nav__link">
+    Pro dan Kontra KNN
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pro" title="Pro" class="md-nav__link">
+    Pro
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kontra" title="Kontra" class="md-nav__link">
+    Kontra
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bagaimana-menemukan-nilai-k-terbaik" title="Bagaimana menemukan nilai K terbaik?" class="md-nav__link">
+    Bagaimana menemukan nilai K terbaik?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k-tetangga-terdekat-di-r" title="K Tetangga Terdekat di R" class="md-nav__link">
+    K Tetangga Terdekat di R
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read-data" title="Read Data" class="md-nav__link">
+    Read Data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#langkah-langkah-menjalankan-k-neighbor-di-r" title="Langkah-langkah Menjalankan K-Neighbor di R" class="md-nav__link">
+    Langkah-langkah Menjalankan K-Neighbor di R
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#k-neighbor" title="K-Neighbor" class="md-nav__link">
+    K-Neighbor
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kelebihan-dan-kekuarangan" title="Kelebihan dan Kekuarangan" class="md-nav__link">
+    Kelebihan dan Kekuarangan
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bagaimana-k-neighbor-bekerja" title="Bagaimana K-Neighbor Bekerja?" class="md-nav__link">
+    Bagaimana K-Neighbor Bekerja?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#langkah-1-hitung-kesamaan-berdasarkan-fungsi-jarak" title="#Langkah 1 : Hitung Kesamaan berdasarkan fungsi jarak." class="md-nav__link">
+    #Langkah 1 : Hitung Kesamaan berdasarkan fungsi jarak.
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pelanggan-baru-bernama-monica-memiliki-tinggi-161cm-dan-berat-61kg" title="Pelanggan baru bernama 'Monica' memiliki tinggi 161cm dan berat 61kg." class="md-nav__link">
+    Pelanggan baru bernama 'Monica' memiliki tinggi 161cm dan berat 61kg.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#langkah-2-menemukan-tetangga-terdekat" title="#Langkah 2: Menemukan tetangga terdekat" class="md-nav__link">
+    #Langkah 2: Menemukan tetangga terdekat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asumsi-k-neighbor" title="Asumsi K-Neighbor" class="md-nav__link">
+    Asumsi K-Neighbor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-standardisasi" title="1. Standardisasi" class="md-nav__link">
+    1. Standardisasi
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2outlier" title="2.Outlier" class="md-nav__link">
+    2.Outlier
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mengapa-knn-bersifat-non-parametrik" title="Mengapa KNN bersifat non-parametrik?" class="md-nav__link">
+    Mengapa KNN bersifat non-parametrik?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#knn-vs-k-mean" title="KNN vs K-Mean" class="md-nav__link">
+    KNN vs K-Mean
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pro-dan-kontra-knn" title="Pro dan Kontra KNN" class="md-nav__link">
+    Pro dan Kontra KNN
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pro" title="Pro" class="md-nav__link">
+    Pro
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kontra" title="Kontra" class="md-nav__link">
+    Kontra
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bagaimana-menemukan-nilai-k-terbaik" title="Bagaimana menemukan nilai K terbaik?" class="md-nav__link">
+    Bagaimana menemukan nilai K terbaik?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k-tetangga-terdekat-di-r" title="K Tetangga Terdekat di R" class="md-nav__link">
+    K Tetangga Terdekat di R
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read-data" title="Read Data" class="md-nav__link">
+    Read Data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="k-nearest-neighbor">K Nearest Neighbor<a class="headerlink" href="#k-nearest-neighbor" title="Permanent link">&para;</a></h1>
+<h2 id="langkah-langkah-menjalankan-k-neighbor-di-r">Langkah-langkah Menjalankan K-Neighbor di R<a class="headerlink" href="#langkah-langkah-menjalankan-k-neighbor-di-r" title="Permanent link">&para;</a></h2>
+<h3 id="k-neighbor"><strong>K-Neighbor</strong><a class="headerlink" href="#k-neighbor" title="Permanent link">&para;</a></h3>
+<p>K-Neighbor adalah teknik pembelajaran yang diawasi non-parametrik di mana kami mencoba untuk mengklasifikasikan titik data ke kategori tertentu dengan bantuan data training. Sederhananya, menangkap informasi dari semua kasus dan mengklasifikasikan kasus baru berdasarkan kesamaan.</p>
+<h2 id="kelebihan-dan-kekuarangan">Kelebihan dan Kekuarangan<a class="headerlink" href="#kelebihan-dan-kekuarangan" title="Permanent link">&para;</a></h2>
+<p>KNN memiliki beberapa kelebihan yaitu tangguh terhadap training data yang noisy dan efektif apabila data latih nya besar.</p>
+<p>Sedangkan kelemahan dari KNN adalah :</p>
+<ol>
+<li>KNN perlu menentukan nilai dari parameter K (jumlah dari tetangga terdekat)</li>
+<li>Pembelajaran berdasarkan jarak tidak jelas mengenai jenis jarak apa yang harus digunakan dan atribut mana yang harus digunakan untuk mendapatkan hasil yang terbaik</li>
+<li>Biaya komputasi cukup tinggi karena diperlukan perhitungan jarak dari tiap sample uji pada keseluruhan sample latih</li>
+</ol>
+<h3 id="bagaimana-k-neighbor-bekerja">Bagaimana K-Neighbor Bekerja?<a class="headerlink" href="#bagaimana-k-neighbor-bekerja" title="Permanent link">&para;</a></h3>
+<p>Misalkan kita memiliki tinggi, berat dan ukuran kaos dari beberapa pelanggan dan kita perlu memprediksi ukuran kaos dari pelanggan baru hanya dengan informasi tinggi dan berat yang kita miliki. Data termasuk informasi tinggi, berat dan ukuran kaos ditampilkan di bawah ini.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Height (in cms)</th>
+<th align="center">Weight (in kgs)</th>
+<th align="center">T Shirt Size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">158</td>
+<td align="center">58</td>
+<td align="center">M</td>
+</tr>
+<tr>
+<td align="center">158</td>
+<td align="center">59</td>
+<td align="center">M</td>
+</tr>
+<tr>
+<td align="center">158</td>
+<td align="center">63</td>
+<td align="center">M</td>
+</tr>
+<tr>
+<td align="center">160</td>
+<td align="center">59</td>
+<td align="center">M</td>
+</tr>
+<tr>
+<td align="center">160</td>
+<td align="center">60</td>
+<td align="center">M</td>
+</tr>
+<tr>
+<td align="center">163</td>
+<td align="center">60</td>
+<td align="center">M</td>
+</tr>
+<tr>
+<td align="center">163</td>
+<td align="center">61</td>
+<td align="center">M</td>
+</tr>
+<tr>
+<td align="center">160</td>
+<td align="center">64</td>
+<td align="center">L</td>
+</tr>
+<tr>
+<td align="center">163</td>
+<td align="center">64</td>
+<td align="center">L</td>
+</tr>
+<tr>
+<td align="center">165</td>
+<td align="center">61</td>
+<td align="center">L</td>
+</tr>
+<tr>
+<td align="center">165</td>
+<td align="center">62</td>
+<td align="center">L</td>
+</tr>
+<tr>
+<td align="center">165</td>
+<td align="center">65</td>
+<td align="center">L</td>
+</tr>
+<tr>
+<td align="center">168</td>
+<td align="center">62</td>
+<td align="center">L</td>
+</tr>
+<tr>
+<td align="center">168</td>
+<td align="center">63</td>
+<td align="center">L</td>
+</tr>
+<tr>
+<td align="center">168</td>
+<td align="center">66</td>
+<td align="center">L</td>
+</tr>
+<tr>
+<td align="center">170</td>
+<td align="center">63</td>
+<td align="center">L</td>
+</tr>
+<tr>
+<td align="center">170</td>
+<td align="center">64</td>
+<td align="center">L</td>
+</tr>
+<tr>
+<td align="center">170</td>
+<td align="center">68</td>
+<td align="center">L</td>
+</tr>
+</tbody>
+</table>
+<h3 id="langkah-1-hitung-kesamaan-berdasarkan-fungsi-jarak">#Langkah 1 : Hitung Kesamaan berdasarkan fungsi jarak.<a class="headerlink" href="#langkah-1-hitung-kesamaan-berdasarkan-fungsi-jarak" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="assets/images/jarak.PNG" /></p>
+<p>Gagasan untuk menggunakan ukuran jarak adalah untuk menemukan jarak (kesamaan) antara sampel baru dan data training dan kemudian menemukan k-terdekat dengan pelanggan baru dalam hal tinggi dan berat.</p>
+<h4 id="pelanggan-baru-bernama-monica-memiliki-tinggi-161cm-dan-berat-61kg">Pelanggan baru bernama 'Monica' memiliki tinggi 161cm dan berat 61kg.<a class="headerlink" href="#pelanggan-baru-bernama-monica-memiliki-tinggi-161cm-dan-berat-61kg" title="Permanent link">&para;</a></h4>
+<p>Demikian pula, kami akan menghitung jarak semua data training dengan data baru dan menghitung peringkat dalam hal jarak. Nilai jarak terkecil akan berada di peringkat 1 dan dianggap sebagai tetangga terdekat.</p>
+<h3 id="langkah-2-menemukan-tetangga-terdekat">#Langkah 2: Menemukan tetangga terdekat<a class="headerlink" href="#langkah-2-menemukan-tetangga-terdekat" title="Permanent link">&para;</a></h3>
+<p>Biarkan k menjadi 5. Kemudian mencari algoritma 5 pelanggan yang paling dekat dengan Monica, yaitu paling mirip dengan Monica dalam hal atribut, dan lihat kategori apa yang digunakan oleh 5 pelanggan itu. Jika 4 dari mereka memiliki 'Ukuran kaos sedang' dan 1 memiliki 'Ukuran kaos Besar' maka tebakan terbaik untuk Monica adalah 'kaos Sedang. Lihat perhitungan yang ditunjukkan pada gambar di bawah ini.</p>
+<p><img alt="" src="assets/images/langkah2.PNG" /></p>
+<p>Pada grafik di bawah ini, variabel dependen biner (ukuran kaos) ditampilkan dalam warna biru dan oranye. 'Ukuran kaos sedang' berwarna biru dan 'Ukuran kaos besar' dalam warna oranye. Informasi pelanggan baru ditampilkan dalam lingkaran kuning. Empat titik data yang disorot biru dan satu titik data yang disorot oranye dekat dengan lingkaran kuning. jadi prediksi untuk case baru adalah titik data yang disorot biru yang ukuran kaos Sedang.</p>
+<p><img alt="" src="assets/images/langkah2-2.PNG" /></p>
+<h2 id="asumsi-k-neighbor">Asumsi K-Neighbor<a class="headerlink" href="#asumsi-k-neighbor" title="Permanent link">&para;</a></h2>
+<h2 id="1-standardisasi">1. Standardisasi<a class="headerlink" href="#1-standardisasi" title="Permanent link">&para;</a></h2>
+<p>Ketika variabel independen dalam data training diukur dalam unit yang berbeda, penting untuk melakukan standarisasi variabel sebelum menghitung jarak. Misalnya, jika satu variabel didasarkan pada tinggi dalam cm, dan yang lainnya didasarkan pada berat dalam kg maka tinggi akan lebih mempengaruhi perhitungan jarak. Agar dapat dibandingkan, kita perlu membuat standar yang dapat dilakukan dengan salah satu metode berikut:</p>
+<p><img alt="" src="assets/images/standarisasi1.PNG" /></p>
+<p>Setelah standarisasi, nilai terdekat ke-5 berubah karena ketinggian mendominasi lebih awal sebelum standarisasi. Oleh karena itu, penting untuk membakukan prediktor sebelum menjalankan algoritma tetangga K-terdekat.</p>
+<p><img alt="" src="assets/images/standarisasi2.PNG" /></p>
+<h3 id="2outlier">2.Outlier<a class="headerlink" href="#2outlier" title="Permanent link">&para;</a></h3>
+<p>Nilai-k rendah sensitif terhadap outlier dan nilai-K yang lebih tinggi lebih tahan terhadap outlier karena menganggap lebih banyak pemilih untuk memutuskan prediksi.</p>
+<h4 id="mengapa-knn-bersifat-non-parametrik">Mengapa KNN bersifat non-parametrik?<a class="headerlink" href="#mengapa-knn-bersifat-non-parametrik" title="Permanent link">&para;</a></h4>
+<p>Non-parametrik berarti tidak membuat asumsi apa pun tentang distribusi data yang mendasarinya. Metode non-parametrik tidak memiliki jumlah parameter tetap dalam model. Demikian pula di KNN, parameter model sebenarnya tumbuh dengan dataset training.</p>
+<h4 id="knn-vs-k-mean">KNN vs K-Mean<a class="headerlink" href="#knn-vs-k-mean" title="Permanent link">&para;</a></h4>
+<p>Banyak orang bingung antara dua teknik statistik ini - K-mean dan K-tetangga terdekat. Lihat beberapa perbedaan di bawah ini -
+K-mean adalah teknik belajar tanpa pengawasan (tidak ada variabel dependen) sedangkan KNN adalah algoritma pembelajaran yang diawasi (variabel dependen ada)
+K-mean adalah teknik pengelompokan yang mencoba untuk membagi titik data menjadi K-cluster sehingga titik-titik di setiap cluster cenderung saling berdekatan sedangkan K-tetangga terdekat mencoba untuk menentukan klasifikasi suatu titik, menggabungkan klasifikasi K poin terdekat</p>
+<blockquote>
+<p>[^Bisakah KNN digunakan untuk regresi?]: 
+[^Yes, K-nearest neighbor can be used for regression. In other words, K-nearest neighbor algorithm can be applied  when dependent variable is continuous. In this case, the predicted value is the average of the values of its k nearest neighbors.]: </p>
+</blockquote>
+<h2 id="pro-dan-kontra-knn">Pro dan Kontra KNN<a class="headerlink" href="#pro-dan-kontra-knn" title="Permanent link">&para;</a></h2>
+<h3 id="pro">Pro<a class="headerlink" href="#pro" title="Permanent link">&para;</a></h3>
+<p>Mudah dimengerti
+Tidak ada asumsi tentang data
+Dapat diterapkan untuk klasifikasi dan regresi
+Bekerja dengan mudah pada masalah multi-class</p>
+<h3 id="kontra">Kontra<a class="headerlink" href="#kontra" title="Permanent link">&para;</a></h3>
+<p>Memori Intensif / Komputasi mahal
+Peka terhadap skala data
+Tidak berfungsi dengan baik pada variabel target acara jarang (miring)
+Perjuangan ketika tingginya jumlah variabel independen
+Untuk masalah apa pun, nilai k yang kecil akan menyebabkan variasi prediksi yang besar. Atau, pengaturan k ke nilai besar dapat menyebabkan bias model besar.
+Bagaimana cara menangani variabel kategori di KNN?</p>
+<p>Buat variabel dummy dari variabel kategori dan sertakan mereka, bukan variabel kategori asli. Tidak seperti regresi, buat k boneka bukan (k-1). Misalnya, variabel kategori bernama "Departemen" memiliki 5 level / kategori unik. Jadi kita akan membuat 5 variabel dummy. Setiap variabel dummy memiliki 1 terhadap departemennya dan yang lainnya 0.</p>
+<h3 id="bagaimana-menemukan-nilai-k-terbaik">Bagaimana menemukan nilai K terbaik?<a class="headerlink" href="#bagaimana-menemukan-nilai-k-terbaik" title="Permanent link">&para;</a></h3>
+<p>Validasi silang adalah cara cerdas untuk mengetahui nilai K optimal. Ini memperkirakan tingkat kesalahan validasi dengan memegang subset dari set pelatihan dari proses pembangunan model.</p>
+<p>Validasi silang (misalkan validasi 10 kali lipat) melibatkan pembagian pelatihan secara acak menjadi 10 grup, atau lipatan, dengan ukuran yang kira-kira sama. 90% data digunakan untuk melatih model dan sisanya 10% untuk memvalidasinya. Tingkat kesalahan klasifikasi kemudian dihitung pada data validasi 10%. Prosedur ini berulang 10 kali. Kelompok pengamatan yang berbeda diperlakukan sebagai set validasi masing-masing dari 10 kali. Ini menghasilkan 10 perkiraan kesalahan validasi yang kemudian dirata-rata.</p>
+<h3 id="k-tetangga-terdekat-di-r">K Tetangga Terdekat di R<a class="headerlink" href="#k-tetangga-terdekat-di-r" title="Permanent link">&para;</a></h3>
+<p>Kami akan menggunakan data historis statistik menang / kalah masa lalu dan pidato terkait. Dataset ini terdiri dari 1524 pengamatan pada 14 variabel. Variabel dependen adalah win / loss di mana 1 mengindikasikan win dan 0 mengindikasikan loss. Variabel independen adalah:</p>
+<ol>
+<li>
+<p>Proporsi kata-kata dalam pidato yang ditampilkan
+Sebuah. Optimisme
+b. Pesimisme
+c. penggunaan Masa Lalu
+d. penggunaan Present
+e. penggunaan Masa Depan</p>
+</li>
+<li>
+<p>Jumlah waktu dia menyebutkan partainya sendiri</p>
+</li>
+<li>
+<p>Jumlah waktu dia menyebutkan pihak lawannya.</p>
+</li>
+<li>
+<p>Beberapa ukuran menunjukkan isi pidato yang ditampilkan
+Sebuah. Keterbukaan
+b. Hati nurani
+c. Extraversion
+d. Agreeableness
+e. Neurotisisme
+f. emosionalitas</p>
+</li>
+</ol>
+<h3 id="read-data">Read Data<a class="headerlink" href="#read-data" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><em># Read data</em>
+<em>data1 = read.csv("US Presidential Data.csv")</em>
+<em>View(data1)</em></p>
+</blockquote>
+<p>Membaca file CSV dengan bantuan perintah read.csv. Di sini argumen pertama adalah nama dataset. Argumen kedua - Header = TRUE atau T menyiratkan bahwa baris pertama dalam file csv menunjukkan judul sementara header = FALSE atau F menunjukkan bahwa data harus dibaca dari baris pertama dan tidak melibatkan judul apa pun.</p>
+<blockquote>
+<p><em># load library</em>
+<em>library(caret)</em>
+<em>library(e1071)</em></p>
+<p><em># Transforming the dependent variable to a factor</em>
+<em>data1<span><span class="MathJax_Preview">Win.Loss = as.factor(data1</span><script type="math/tex">Win.Loss = as.factor(data1</script></span>Win.Loss)</em>  </p>
+</blockquote>
+<p>Di sini kita akan menggunakan paket caret untuk menjalankan knn. Karena variabel dependen saya adalah numerik di sini, maka kita perlu mengubahnya menjadi faktor menggunakan as.factor ().</p>
+<blockquote>
+<p><em>#Partitioning the data into training and validation data</em>
+<em>set.seed(101)</em>
+<em>index = createDataPartition(data1$Win.Loss, p = 0.7, list = F )</em>
+<em>train = data1[index,]</em>
+<em>validation = data1[-index,]</em></p>
+</blockquote>
+<p>Untuk mempartisi data ke dalam set pelatihan dan validasi, kami menggunakan fungsi <strong>createDataPartition()</strong> di caret.</p>
+<p>Pertama-tama kita menetapkan benih menjadi 101 sehingga hasil yang sama dapat diperoleh. Dalam <strong>createDataPartition()</strong> argumen pertama adalah variabel dependen, p menunjukkan berapa banyak data yang kita inginkan dalam set pelatihan; di sini kita mengambil 70% dari data dalam set pelatihan dan sisanya dalam set validasi silang, daftar = F menunjukkan bahwa indeks yang kita peroleh harus dalam bentuk vektor.</p>
+<blockquote>
+<p><em># Explore data</em>
+<em>dim(train)</em>
+<em>dim(validation)</em>
+<em>names(train)</em>
+<em>head(train)</em>
+<em>head(validation)</em></p>
+</blockquote>
+<p>Dimensi data-training dan validasi diperiksa melalui dim (). <strong>Lihat 6 baris dataset pelatihan pertama</strong> </p>
+<pre class="codehilite"><code>   Win.Loss   Optimism  Pessimism  PastUsed FutureUsed PresentUsed OwnPartyCount
+1        X1 0.10450450 0.05045045 0.4381443  0.4948454  0.06701031             2
+3        X1 0.11257190 0.04930156 0.4159664  0.5168067  0.06722689             1
+5        X1 0.10582640 0.05172414 0.3342618  0.5821727  0.08356546             3
+7        X1 0.09838275 0.06401617 0.3240741  0.6018519  0.07407407             6
+9        X1 0.10610734 0.04688464 0.3633540  0.5372671  0.09937888             2
+10       X1 0.10066128 0.05951506 0.3554817  0.5382060  0.10631229             1
+   OppPartyCount NumericContent Extra Emoti Agree Consc Openn
+1              2    0.001877543 4.041 4.049 3.469 2.450 2.548
+3              1    0.002131163 3.463 4.039 3.284 2.159 2.465
+5              4    0.002229220 4.658 4.023 3.283 2.415 2.836
+7              4    0.002251985 3.727 4.108 3.357 2.128 2.231
+9              5    0.002446440 4.119 4.396 3.661 2.572 2.599
+10             2    0.002107436 3.800 4.501 3.624 2.117 2.154</code></pre>
+
+<p>Secara default, level variabel dependen dalam dataset ini adalah "0" "1". Nanti ketika kita akan melakukan prediksi, level-level ini akan digunakan sebagai nama variabel untuk prediksi sehingga kita perlu membuatnya menjadi nama variabel yang valid.</p>
+<blockquote>
+<p><em># Setting levels for both training and validation data</em>
+<em>levels(train<span><span class="MathJax_Preview">Win.Loss) &lt;- make.names(levels(factor(train</span><script type="math/tex">Win.Loss) <- make.names(levels(factor(train</script></span>Win.Loss)))</em>
+<em>levels(validation<span><span class="MathJax_Preview">Win.Loss) &lt;- make.names(levels(factor(validation</span><script type="math/tex">Win.Loss) <- make.names(levels(factor(validation</script></span>Win.Loss)))</em></p>
+</blockquote>
+<p>Di sini kita menggunakan metode validasi silang berulang menggunakan trainControl. Angka menunjukkan jumlah lipatan dan 'pengulangan' untuk validasi silang lipat 'berulang'. <strong>Dalam hal ini, 3 validasi 10 kali lipat terpisah digunakan.</strong></p>
+<blockquote>
+<p><em># Setting up train controls</em>
+<em>repeats = 3</em>
+<em>numbers = 10</em>
+<em>tunel = 10</em></p>
+<p><em>set.seed(1234)</em>
+<em>x = trainControl(method = "repeatedcv",</em>
+                 <em>number = numbers,</em>
+                 <em>repeats = repeats,</em>
+                 <em>classProbs = TRUE,</em>
+                 <em>summaryFunction = twoClassSummary)</em>  </p>
+</blockquote>
+<p>Menggunakan <strong>fungsi train()</strong> kita menjalankan knn kita; <strong>Win.Loss</strong> adalah variabel dependen, berhenti penuh setelah tilde menunjukkan semua variabel independen ada di sana. Dalam ‘data =’ kami melewati perangkat pelatihan kami, ‘metode = den menunjukkan teknik mana yang ingin kami gunakan, pengaturan <strong>preProcess</strong> ke pusat dan skala memberi tahu kami bahwa kami menstandarisasi variabel independen kami</p>
+<p><strong>Center</strong>: kurangi mean dari nilai.
+<strong>Scale</strong>: membagi nilai dengan standar deviasi.</p>
+<p><strong>trControl</strong> menuntut ‘x’ kami yang diperoleh melalui train () dan <strong>tunelength</strong> selalu berupa integer yang digunakan untuk menyempurnakan algoritme kami.</p>
+<blockquote>
+<p>model1 &lt;- train(Win.Loss~. , data = train, method = "knn",</p>
+<p>​               preProcess = c("center","scale"),</p>
+<p>​               trControl = x,</p>
+<p>​               metric = "ROC",</p>
+<p>​               tuneLength = tunel)</p>
+<p># Summary of model</p>
+<p>model1</p>
+<p>plot(model1)</p>
+</blockquote>
+<pre class="codehilite"><code>
+k-Nearest Neighbors 
+
+1068 samples
+  13 predictor
+   2 classes: 'X0', 'X1' 
+
+Pre-processing: centered (13), scaled (13) 
+Resampling: Cross-Validated (10 fold, repeated 3 times) 
+Summary of sample sizes: 961, 962, 961, 962, 961, 962, ... 
+Resampling results across tuning parameters:
+
+  k   ROC        Sens       Spec     
+   5  0.8440407  0.6910182  0.8382051
+   7  0.8537506  0.6847658  0.8520513
+   9  0.8575183  0.6712350  0.8525796
+  11  0.8588422  0.6545296  0.8592152
+  13  0.8585478  0.6560976  0.8556333
+  15  0.8570397  0.6432249  0.8648329
+  17  0.8547545  0.6448509  0.8627894
+  19  0.8520574  0.6336043  0.8632867
+  21  0.8484632  0.6215447  0.8627894
+  23  0.8453320  0.6071622  0.8658664
+
+ROC was used to select the optimal model using the largest value.
+The final value used for the model was k = 11.</code></pre>
+
+<p><img alt="" src="C:\Users\Yusril\Downloads\Programs\app github pages\mkdocs-material-master\mkdocs-material-master\docs\assets\images\roc.PNG" /></p>
+<p>Tahap akhir, untuk membuat prediksi pada set validasi kami, kita menggunakan fungsi prediksi dimana argumen pertama adalah rumus yang akan diterapkan dan argumen kedua adalah data baru yang kami inginkan prediksi.</p>
+<blockquote>
+<h1 id="validation">Validation<a class="headerlink" href="#validation" title="Permanent link">&para;</a></h1>
+<p>valid_pred &lt;- predict(model1,validation, type = "prob")</p>
+<h1 id="storing-model-performance-scores">Storing Model Performance Scores<a class="headerlink" href="#storing-model-performance-scores" title="Permanent link">&para;</a></h1>
+<p>library(ROCR)
+pred_val &lt;-prediction(valid_pred[,2],validation$Win.Loss)</p>
+<h1 id="calculating-area-under-curve-auc">Calculating Area under Curve (AUC)<a class="headerlink" href="#calculating-area-under-curve-auc" title="Permanent link">&para;</a></h1>
+<p>perf_val &lt;- performance(pred_val,"auc")
+perf_val</p>
+<h1 id="plot-auc">Plot AUC<a class="headerlink" href="#plot-auc" title="Permanent link">&para;</a></h1>
+<p>perf_val &lt;- performance(pred_val, "tpr", "fpr")
+plot(perf_val, col = "green", lwd = 1.5)</p>
+<h1 id="calculating-ks-statistics">Calculating KS statistics<a class="headerlink" href="#calculating-ks-statistics" title="Permanent link">&para;</a></h1>
+<p>ks &lt;- max(attr(perf_val, "y.values")[[1]] - (attr(perf_val, "x.values")[[1]]))
+ks</p>
+</blockquote>
+<p>Area di bawah kurva (AUC) pada dataset validasi adalah <strong>0,8642</strong>.</p>
+<p>Referensi : <a href="https://www.listendata.com/2017/12/k-nearest-neighbor-step-by-step-tutorial.html">https://www.listendata.com/2017/12/k-nearest-neighbor-step-by-step-tutorial.html</a></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:=SQRT((161-158)^2+(61-58)^2)"></li>
+</ol>
+</div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2016 - 2019 Martin Donath
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.css">
+    
+      <a href="http://struct.cc" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/squidfunk" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/squidfunk" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://linkedin.com/in/squidfunk" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="assets/javascripts/application.8c0d971c.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"."}})</script>
+      
+    
+  </body>
+</html>
